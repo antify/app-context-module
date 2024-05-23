@@ -1,14 +1,9 @@
 import {defineEventHandler} from '#imports';
-import {useAppContext} from '#app-context-module';
+import {useAppContext, isValidAppContextHandler} from '#app-context-module';
 
 export default defineEventHandler(async (event) => {
-	const {handleRequest, getContext} = useAppContext();
-
-	const contextFromHandler = handleRequest(event);
-	const contextFromGetContext = getContext(event);
-
 	return {
-		contextFromHandler,
-		contextFromGetContext
+		contextFromHandler: isValidAppContextHandler(event),
+		contextFromGetContext: useAppContext(event)
 	};
 })

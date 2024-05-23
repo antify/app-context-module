@@ -1,2 +1,2 @@
 export {useAppContext} from './useAppContext';
-export {appContextValidator} from './validators';
+export {isValidAppContextHandler} from './handlers';

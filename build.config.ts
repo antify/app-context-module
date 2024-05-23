@@ -5,5 +5,6 @@ export default defineBuildConfig({
 	externals: [
 		'@antify/validate',
 		'cookie-es',
+		'h3'
 	]
 });
