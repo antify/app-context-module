@@ -68,6 +68,18 @@ const context: AppContext = isValidAppContextHandler(event);
 const context: AppContext | null = useAppContext(event);
 ```
 
+### Custom validation server side
+
+```typescript
+import {appContextValidator} from '#app-context-module';
+
+const {appId, tenantId} = appContextValidator.validate(getQuery(event));
+
+if (appContextValidator.hasErrors()) {
+	// Handle errors here
+}
+```
+
 # Installation
 
 ```bash

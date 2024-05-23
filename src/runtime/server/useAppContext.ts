@@ -1,6 +1,6 @@
 import type {H3Event} from 'h3';
 import {AppContext} from '../types';
-import {appContextValidator} from './validators';
+import {useAppContextValidator} from './validators';
 import {getCookie, useRuntimeConfig} from '#imports';
 
 const {appContextCookieName} = useRuntimeConfig().appContextModule;
@@ -20,6 +20,7 @@ export function useAppContext(event: H3Event): AppContext | null {
 		return null;
 	}
 
+	const appContextValidator = useAppContextValidator();
 	const context = appContextValidator.validate(parsedContext);
 
 	if (appContextValidator.hasErrors()) {

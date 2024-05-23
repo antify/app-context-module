@@ -1,5 +1,5 @@
 import {getCookie, useRuntimeConfig} from '#imports';
-import {appContextValidator} from './validators';
+import {useAppContextValidator} from './validators';
 import {type AppContext} from '../types';
 import {type H3Event} from 'h3';
 
@@ -20,6 +20,7 @@ export function isValidAppContextHandler(event: H3Event): AppContext {
 		throw new Error(`Invalid app context. The app context cookie is not a valid JSON string: ${e.message}`);
 	}
 
+	const appContextValidator = useAppContextValidator();
 	const context = appContextValidator.validate(parsedContext);
 
 	if (appContextValidator.hasErrors()) {
