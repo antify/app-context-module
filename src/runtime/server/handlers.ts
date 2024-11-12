@@ -27,11 +27,11 @@ export function isValidAppContextHandler(event: H3Event, expectedAppId?: string,
 		throw new Error(`Invalid app context. The data structure of the given app context cookie is invalid: ${appContextValidator.getErrorsAsString()}`);
 	}
 
-	if (expectedAppId !== undefined) {
+	if (expectedAppId !== undefined && context.appId !== expectedAppId) {
 		throw new Error(`Invalid app context. Expected app id ${expectedAppId} but got ${context.appId}`);
 	}
 
-	if (expectedTenantId !== undefined) {
+	if (expectedTenantId !== undefined && context.tenantId !== expectedTenantId) {
 		throw new Error(`Invalid app context. Expected tenant id ${expectedTenantId} but got ${context.tenantId}`);
 	}
 
