@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/antify/app-context-module/compare/v1.3.0...v1.3.1) (2024-11-12)
+
+
+### Bug Fixes
+
+* Fix isValidAppContextHandler if expected app or tenant is given ([2477688](https://github.com/antify/app-context-module/commit/24776889203005642841587df39fd4b3f3f17fe9))
+
 ## [1.3.0](https://github.com/antify/app-context-module/compare/v1.2.0...v1.3.0) (2024-11-12)
 
 
