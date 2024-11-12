@@ -5,7 +5,7 @@ import {type H3Event} from 'h3';
 
 const {appContextCookieName} = useRuntimeConfig().appContextModule;
 
-export function isValidAppContextHandler(event: H3Event): AppContext {
+export function isValidAppContextHandler(event: H3Event, expectedAppId?: string, expectedTenantId?: string): AppContext {
 	const rawContext = getCookie(event, appContextCookieName);
 
 	if (rawContext === undefined) {
@@ -25,6 +25,14 @@ export function isValidAppContextHandler(event: H3Event): AppContext {
 
 	if (appContextValidator.hasErrors()) {
 		throw new Error(`Invalid app context. The data structure of the given app context cookie is invalid: ${appContextValidator.getErrorsAsString()}`);
+	}
+
+	if (expectedAppId !== undefined) {
+		throw new Error(`Invalid app context. Expected app id ${expectedAppId} but got ${context.appId}`);
+	}
+
+	if (expectedTenantId !== undefined) {
+		throw new Error(`Invalid app context. Expected tenant id ${expectedTenantId} but got ${context.tenantId}`);
 	}
 
 	return context;
