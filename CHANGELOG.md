@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/antify/app-context-module/compare/v1.2.0...v1.3.0) (2024-11-12)
+
+
+### Features
+
+* extend isValidAppContextHandler with expected context ([5c4fd3a](https://github.com/antify/app-context-module/commit/5c4fd3af59fdb4e40881356bf76e8cc1189381d7))
+
 ## [1.2.0](https://github.com/antify/app-context-module/compare/v1.1.0...v1.2.0) (2024-05-23)
 
 
